@@ -16,9 +16,12 @@ class SliderEntityRowEditor extends LitElement {
     console.log(
       selected_domain,
       controllers[selected_domain],
-      controllers[selected_domain]?.allowed_attributes
+      controllers[selected_domain]?.allowed_attributes,
+      controllers[selected_domain]?.allowed_show_positions
     );
     const attributes = controllers[selected_domain]?.allowed_attributes ?? [];
+    const show_positions =
+      controllers[selected_domain]?.allowed_show_positions ?? [];
     return [
       {
         name: "entity",
@@ -80,6 +83,18 @@ class SliderEntityRowEditor extends LitElement {
                 selector: { select: { options: attributes } },
               },
               { name: "colorize", selector: { boolean: {} } },
+            ],
+          }
+        : {},
+      show_positions.length
+        ? {
+            type: "grid",
+            name: "",
+            schema: [
+              {
+                name: "show_position",
+                selector: { select: { options: show_positions } },
+              },
             ],
           }
         : {},

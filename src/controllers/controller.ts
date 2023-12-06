@@ -14,6 +14,7 @@ export interface ControllerConfig {
   dir?: string;
   colorize?: boolean;
   show_icon?: boolean;
+  show_position?: string;
 }
 
 export abstract class Controller {
@@ -27,6 +28,7 @@ export abstract class Controller {
   abstract _step?: number;
 
   static allowed_attributes = [];
+  static allowed_show_positions = [];
 
   constructor(config: ControllerConfig, parent) {
     this._config = config;

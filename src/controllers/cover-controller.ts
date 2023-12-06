@@ -6,15 +6,20 @@ export class CoverController extends Controller {
   _min;
 
   static allowed_attributes = ["position", "tilt"];
+  static allowed_show_positions = ["open", "always"];
 
   get attribute() {
     return this._config.attribute || "position";
   }
 
+  get show_position() {
+    return this._config.show_position || "open";
+  }
+
   get _value() {
     switch (this.attribute) {
       case "position":
-        return this.stateObj.state === "closed"
+        return this.stateObj.state === "closed" && this.show_position == "open"
           ? 0
           : this.stateObj.attributes.current_position;
       case "tilt":
