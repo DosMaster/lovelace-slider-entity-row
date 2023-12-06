@@ -56,6 +56,7 @@ Available options:
 | `attribute`     | (see below)    | Which attribute the slider should control                                                                                                 |          |
 | `colorize`      | `true`/`false` | Colorize the bar (only for some attributes)                                                                                               | `false`  |
 | `dir`           | `ltr`/`rtl`    | Use this to override your languages Right-To-Left or Left-To-Right setting                                                                | language |
+| `show_position` | (see below)    | 'always': Always show position<br>'open': Only show position when status is 'open'                                                        |          | 
 
 Most general Entities row options like `name`, `icon` and `tap_action` et.al. are also supported.
 
@@ -121,6 +122,15 @@ Currently, the following attribute settings are supported.
 
 - `position` - default
 - `tilt`
+
+### show_position
+
+Currently, the following show_position settings are supported.
+
+**For `cover` domain:**
+
+- `open` - default
+- `always`
 
 ---
 
